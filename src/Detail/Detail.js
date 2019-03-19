@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-class Detail extends Component {
-    componentDidMount() {
-        const movie = this.props;
+import Show from './Show';
+import '../styles/Detail.css';
 
-        fetch("http://www.omdbapi.com/?i=" + movie.imdbID + "&apikey=2ec014c3")
+class Detail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            show: {}
+        };
+
+    }
+
+    componentDidMount() {
+        const showId = this.props.match.params.id;
+
+        fetch("http://www.omdbapi.com/?i=" + showId + "&apikey=2ec014c3")
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        item: {
-                            id: movie.imdbID,
-                            title: result.Title,
-                            year: result.Year,
-                            poster: result.Poster
-                        }
+                        show: result
                     });
                 },
                 (error) => {
@@ -37,8 +45,9 @@ class Detail extends Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <div>
-                    <span><Link to="/">Back to Shows List</Link></span>
+                <div className="detailsView">
+                    <span><Link to="/">&lt;&lt;&lt; Back to Shows List</Link></span>
+                    <Show {...this.state.show} />
                 </div>
             );
         }

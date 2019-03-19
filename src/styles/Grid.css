@@ -1,7 +1,15 @@
+.gridView {
+    margin: 1rem auto;
+    max-width: calc(100% - 5rem);
+}
 .billboard {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.search {
+    margin: 1rem auto;
 }
 
 .poster {

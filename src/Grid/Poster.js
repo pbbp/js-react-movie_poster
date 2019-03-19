@@ -48,7 +48,7 @@ class Poster extends Component {
                 <a className="poster" href={"shows/" + item.id} >
                     <img className="posterImage" src={item.poster} alt="" />
                     <p>{item.title}</p>
-                    <p>{item.year}</p>
+                    <p>({item.year})</p>
                 </a >
             );
         }

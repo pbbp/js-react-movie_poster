@@ -37,13 +37,11 @@ class Grid extends Component {
             this.setState({ shows: data.shows });
 
         }
-
-        console.log(this.state.shows);
     }
 
     render() {
         return (
-            <div>
+            <div className="gridView">
                 <input className="search" type="text" placeholder="Search Show" onChange={this.handleChange} />
                 <div className="billboard">
                     {this.state.shows.map(show =>
