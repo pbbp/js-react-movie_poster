@@ -1,0 +1,17 @@
+.billboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.poster {
+    text-align: center;
+    padding: 10px;
+    margin: 0 0 10px;
+    border: 1px dotted black;
+
+}
+
+.poster .posterImage {
+    max-width: 60vmin;
+}

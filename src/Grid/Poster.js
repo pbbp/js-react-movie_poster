@@ -45,8 +45,8 @@ class Poster extends Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <a href={"shows/" + item.id} >
-                    <img src={item.poster} alt="" />
+                <a className="poster" href={"shows/" + item.id} >
+                    <img className="posterImage" src={item.poster} alt="" />
                     <p>{item.title}</p>
                     <p>{item.year}</p>
                 </a >

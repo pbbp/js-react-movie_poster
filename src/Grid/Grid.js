@@ -44,8 +44,8 @@ class Grid extends Component {
     render() {
         return (
             <div>
-                <input type="text" onChange={this.handleChange} />
-                <div>
+                <input className="search" type="text" placeholder="Search Show" onChange={this.handleChange} />
+                <div className="billboard">
                     {this.state.shows.map(show =>
                         // <Link to={`${match.url}/shows/` + show.imdbID}>
                         <Poster {...show} />
