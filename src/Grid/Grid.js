@@ -46,7 +46,7 @@ class Grid extends Component {
                 <div className="billboard">
                     {this.state.shows.map(show =>
                         // <Link to={`${match.url}/shows/` + show.imdbID}>
-                        <Poster {...show} />
+                        <Poster {...show} key={show.title.replace(" ", "-")} />
                         // </Link>
                     )}
                 </div>
