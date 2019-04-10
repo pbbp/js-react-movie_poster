@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link } from "react-router-dom";
 
 import data from './data.json';
 
@@ -22,12 +21,7 @@ class Grid extends Component {
 
         if (input) {
 
-            shows = this.state.shows.filter((show) => {
-                console.log(
-                    show.title,
-                    show.title.toLowerCase().includes(input.toLowerCase())
-                );
-
+            shows = data.shows.filter((show) => {
                 return show.title.toLowerCase().includes(input.toLowerCase())
             })
 
